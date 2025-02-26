@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Playwrite+AR:wght@100..400&family=Poiret+One&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Fonts  */
+.corinthia-regular {
+    font-family: "Corinthia", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.corinthia-bold {
+    font-family: "Corinthia", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.poiret-one-regular {
+    font-family: "Poiret One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.red-hat-display {
+    font-family: "Red Hat Display", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+.playwrite-ar- {
+    font-family: "Playwrite AR", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Fonts */
+
+* {
+    box-sizing: border-box;
+    margin: 0%;
+}
+
+:root {
+    --color_Nro1: rgb(78, 155, 154);
+    --color_Nro2: rgb(214, 216, 223);
+    --color_Nro3: rgb(242, 227, 192);
+    --color_Nro4: rgb(187, 158, 142);
+    --color_Nro5: rgb(120, 91, 81);
+}
+
+body {
+    background-color: var(--color_Nro3);
+    color: var(--color_Nro5);
+}
+
+.Contenedor_Header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 1em;
+}
+
+.Logo_Cafelino {
+    width: 5%;
+    min-width: 100px;
+    height: auto;
+}
+
+.Texto_Header {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: "Corinthia", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 6em;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Playwrite AR", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    gap: 30px;
+    background-color: var(--color_Nro4);
+}
+
+nav button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color_Nro3);
+    height: 50px;
+    width: 200px;
+    flex-basis: 50%;
+    color: var(--color_Nro5);
+    border: 0.5px solid black;
+    padding: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Red Hat Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 1em;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+nav button:hover {
+    background-color: var(--color_Nro1);
+    color: var(--color_Nro5);
+}
+
+nav button a{
+    text-decoration: none;
+}
+
+@media (max-width: 900px) {
+    nav {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media (max-width: 450px) {
+    nav {
+        grid-template-columns: repeat(1, auto);
+        place-items: center;
+    }
+    nav button {
+        width: 200px;
+    }
+}
+
+section div {
+    color: var(--color_Nro2);
+    height: 250px;
+    border-bottom: 1px solid black;
+}
+.Cafeteria {
+    background-size: cover;
+    background-image: url(/Assets/Cafeteria/Cafe3.jpg);
+}
+
+.Heladeria {
+    background-size: cover;
+    background-image: url(/Assets/Heladeria/Heladeria1.jpg);
+}
+
