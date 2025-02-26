@@ -129,7 +129,7 @@ nav button:hover {
     color: var(--color_Nro5);
 }
 
-nav button a{
+nav button a {
     text-decoration: none;
 }
 
@@ -144,6 +144,7 @@ nav button a{
         grid-template-columns: repeat(1, auto);
         place-items: center;
     }
+
     nav button {
         width: 200px;
     }
@@ -154,6 +155,7 @@ section div {
     height: 250px;
     border-bottom: 1px solid black;
 }
+
 .Cafeteria {
     background-size: cover;
     background-image: url(/Assets/Cafeteria/Cafe3.jpg);
@@ -163,4 +165,3 @@ section div {
     background-size: cover;
     background-image: url(/Assets/Heladeria/Heladeria1.jpg);
 }
-
