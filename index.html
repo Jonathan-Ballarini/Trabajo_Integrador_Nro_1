@@ -20,28 +20,63 @@
         </div>
         <div>
             <nav>
-                <button onclick="location.href='index.html'"> Inicio </button>
-                <button onclick="location.href='Alta.html'"> Alta </button>
-                <button onclick="location.href='Contacto.html'"> Contacto </button>
-                <button onclick="location.href='Nosotros.html'"> Nosotros </button>
+                <button onclick="location.href='/index.html'"> Inicio </button>
+                <button onclick="location.href='/Pages/Alta.html'""> Alta </button>
+                <button onclick=" location.href='/Pages/Contacto.html'"> Contacto </button>
+                <button onclick=" location.href='/Pages/Nosotros.html'"> Nosotros </button>
             </nav>
         </div>
 
     </header>
     <main>
-        <section class="Cafeteria">
-            <div>
-                <h1>Cafeteria</h1>
-            </div>
-        </section>
-        <section class="Heladeria">
-            <div>
-                <h1>Heladería</h1>
+        <div class="Contenedor_Principal">
+                    <div class="Contenedor_Menu">
+                            <section class="Cafeteria" onclick="mostrarMenu('Cafeteria')">
+                                <img src="/Assets/Cafeteria/cup_14695078.png" alt="Cafe_PNG" class="Imagen_Cafe">
+                                <div>
+                                    <h3>Cafeteria</h3>
+                                </div>
+                            </section>
+                        <div class="Separador"></div>
+                            <section class="Heladeria" onclick="mostrarMenu('Heladeria')">
+                                <img src="/Assets/Heladeria/ice-cream_11384725.png" alt="Helado_PNG" class="Imagen_Helado">
+                                <div>
+                                    <h3>Heladería</h3>
+                                </div>
+                            </section>
+                    </div>
+                    <div class="Cards" id="Productos">
 
-            </div>
-        </section>
-    </main>
+                    </div>
+
+                    <div class="Tarjetas" id="contenedorTarjetas"></div>
+
+                    <!-- <div class="Tarjetas">
+                        <div class="Producto">
+                            <div class="Titulo_Producto">
+                                <h2>Cafe Cortado</h2>
+                            </div>
+                            <div>
+                                <img src="/Assets/Cafeteria/Cafe_Cortado.png" alt="" class="Imagen_Producto">
+                            </div>
+                            <div class="Descripcion_Producto">
+                                <p>Café espresso con un toque de leche caliente, suave y equilibrado.</p>
+                            </div>
+                        </div>
+                    </div> -->
+        </div>
+<img src="/Assets/Cafeteria/" alt="">
+        </main>
+
+
+
 
 </body>
+<footer>
+    <br><br>
+    <h1>Realizado por JB</h1>
+</footer>
+
+<script src="/JS/Funciones.js"></script>
 
 </html>
