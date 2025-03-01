@@ -1,6 +1,6 @@
-const Productos = {
+/*const Productos = {
     Cafeteria: [
-        { nombre: "Café", descripcion: "Café negro recién hecho", imagen: "/Assets/Cafeteria/Cafe1.jpg"},
+        { nombre: "Café", descripcion: "Café negro recién hecho"},
         { nombre: "Capuchino", descripcion: "Espuma de leche y café" }
     ],
     Heladeria: [
@@ -23,7 +23,21 @@ function mostrarMenu(tipo) {
         contenedor.appendChild(card);
     });
 }
+*/
 
+function mostrarMenu(tipo) {
+    // Obtener el contenido del div con ID "contenedorTarjetas"
+    let contenedorTarjetas = document.getElementById("contenedorTarjetas");
+    let productos = document.getElementById("Productos");
+
+    if (contenedorTarjetas && productos) {
+        // Mostrar el contenido en el div "Productos"
+        productos.innerHTML = contenedorTarjetas.innerHTML;
+        productos.classList.add("Tarjetas");
+    } else {
+        console.error("No se encontró el contenedor de tarjetas o el div Productos.");
+    }
+}
 
 function crearTarjetaProducto(titulo, imagenUrl, descripcion) {
     const tarjeta = document.createElement('div');
@@ -60,7 +74,7 @@ crearTarjetaProducto("Café Cortado", "/Assets/Cafeteria/Cafe_Cortado.png", "Caf
 crearTarjetaProducto("Café Capuchino", "/Assets/Cafeteria/Cafe_Capucchino.jpg", "Café espresso con leche vaporizada y espuma de leche, cremoso y suave.");
 crearTarjetaProducto("Café Moca", "/Assets/Cafeteria/Cafe_Moca.jpg", "Café espresso combinado con chocolate y leche vaporizada, para un toque dulce y delicioso.");
 crearTarjetaProducto("Flat White", "/Assets/Cafeteria/Cafe_Flat_White.jpg", "Café espresso con leche vaporizada y una capa suave de microespuma, cremoso pero no tan espeso como un cappuccino.");
-crearTarjetaProducto("Macchiato", "/Assets/Cafeteria/Cafe_Macchiato.jpg", "Café espresso con un toque de leche espumada en la parte superior, fuerte y ligeramente dulce.");
+// crearTarjetaProducto("Macchiato", "/Assets/Cafeteria/Cafe_Macchiato.jpg", "Café espresso con un toque de leche espumada en la parte superior, fuerte y ligeramente dulce.");
 
 
 
