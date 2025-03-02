@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alta</title>
     <link rel="stylesheet" href="/Estilos/estilos.css">
 </head>
+
 <body>
     <header>
         <div class="Contenedor_Header">
@@ -20,15 +22,73 @@
             <nav>
                 <button onclick="location.href='/index.html'"> Inicio </button>
                 <button onclick="location.href='/Pages/Alta.html'""> Alta </button>
-                <button onclick="location.href='/Pages/Contacto.html'"> Contacto </button>
-                <button onclick="location.href='/Pages/Nosotros.html'"> Nosotros </button>
+                <button onclick=" location.href='/Pages/Contacto.html'"> Contacto </button>
+                <button onclick=" location.href='/Pages/Nosotros.html'"> Nosotros </button>
             </nav>
         </div>
 
     </header>
     <main>
 
-    </main>
+<div class="Contenedor_Principal_Alta">
+
+                    <form class="Contenedor_Forms" action="">
+                        <fieldset>
+                            <legend>Alta de Productos</legend>
+                
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" name="nombre" id="nombre" required><br>
+                
+                            <label for="precio">Precio:</label>
+                            <input type="number" name="precio" id="precio" required min="18"><br>
+                
+                            <label for="stock">Stock:</label>
+                            <input type="number" name="stock" id="stock" required min="1" max="100"><br>
+                
+                            <label for="marca">Marca:</label>
+                            <input type="text" name="marca" id="marca" required><br>
+                
+                            <label for="categoria">Categoría:</label>
+                            <input type="text" name="categoria" id="categoria" required><br>
+                
+                            <label for="desc_corta">Descripción Corta:</label>
+                            <input type="text" name="desc_corta" id="desc_corta" required><br>
+                
+                            <label for="desc_larga">Descripción Larga:</label>
+                            <input type="text" name="desc_larga" id="desc_larga" required><br>
+                
+                            <div>
+                                <h4>Envío sin Cargo</h4>
+                                <div>
+                                    <input type="radio" name="envio" value="si" required> Si
+                                    <input type="radio" name="envio" value="no"> No <br>
+                                </div>
+                            </div>
+                
+                            <h4>Edad permitida:</h4>
+                            <label for="edad_desde">Edad Desde:</label>
+                            <input type="number" name="edad_desde" id="edad_desde" min="0" max="100" oninput="validarEdades()"><br>
+                
+                            <label for="edad_hasta">Edad Hasta:</label>
+                            <input type="number" name="edad_hasta" id="edad_hasta" min="0" max="100" oninput="validarEdades()"><br>
+                
+                            <label for="archivo">Subir Archivo:</label>
+                            <input type="file" name="archivo" multiple><br>
+                
+                            <button type="submit">Cargar Producto</button>
+                            <button type="reset">Eliminar Contenido</button>
+                        </fieldset>
+                    </form>
+
+        </div>
+        <!-- Deberá contener un formulario con los siguientes campos: 
+        “nombre”, “precio”, “stock”, “marca”, “categoría”, 
+        “descripción corta”, “descripción larga”, “envío sin 
+        cargo”, “edad desde”, “edad hasta” y “foto”. -->
+
+
+        </main>
 
 </body>
+
 </html>

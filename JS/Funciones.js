@@ -1,80 +1,138 @@
-/*const Productos = {
-    Cafeteria: [
-        { nombre: "Café", descripcion: "Café negro recién hecho"},
-        { nombre: "Capuchino", descripcion: "Espuma de leche y café" }
-    ],
-    Heladeria: [
-        { nombre: "Helado de Vainilla", descripcion: "Suave y cremoso" },
-        { nombre: "Helado de Chocolate", descripcion: "Con trozos de chocolate" }
-    ]
-};
+    function crearTarjetaProducto(categoria, titulo, imagenUrl, descripcion) {
+    const tarjeta = document.createElement("div");
+    tarjeta.classList.add("Producto", categoria);
+    tarjeta.setAttribute("data-categoria", categoria);
 
-function mostrarMenu(tipo) {
-    const contenedor = document.getElementById("Productos");
-    contenedor.innerHTML = "";
-    
-    Productos[tipo].forEach(producto => {
-        const card = document.createElement("div");
-        card.classList.add("card");
-        card.innerHTML = `
-            <h3>${producto.nombre}</h3>
-            <p>${producto.descripcion}</p>
-            <img src="${producto.imagen}" alt="">`;
-        contenedor.appendChild(card);
-    });
-}
-*/
-
-function mostrarMenu(tipo) {
-    // Obtener el contenido del div con ID "contenedorTarjetas"
-    let contenedorTarjetas = document.getElementById("contenedorTarjetas");
-    let productos = document.getElementById("Productos");
-
-    if (contenedorTarjetas && productos) {
-        // Mostrar el contenido en el div "Productos"
-        productos.innerHTML = contenedorTarjetas.innerHTML;
-        productos.classList.add("Tarjetas");
-    } else {
-        console.error("No se encontró el contenedor de tarjetas o el div Productos.");
-    }
-}
-
-function crearTarjetaProducto(titulo, imagenUrl, descripcion) {
-    const tarjeta = document.createElement('div');
-    tarjeta.classList.add('Producto');
-
-    const tituloProducto = document.createElement('div');
-    tituloProducto.classList.add('Titulo_Producto');
-    const h2 = document.createElement('h2');
+    const tituloProducto = document.createElement("div");
+    tituloProducto.classList.add("Titulo_Producto");
+    const h2 = document.createElement("h2");
     h2.textContent = titulo;
     tituloProducto.appendChild(h2);
     tarjeta.appendChild(tituloProducto);
 
-    const imagenProducto = document.createElement('div');
-    const img = document.createElement('img');
+    const imagenProducto = document.createElement("div");
+    const img = document.createElement("img");
     img.src = imagenUrl;
     img.alt = titulo;
-    img.classList.add('Imagen_Producto');
+    img.classList.add("Imagen_Producto");
     imagenProducto.appendChild(img);
     tarjeta.appendChild(imagenProducto);
 
-    const descripcionProducto = document.createElement('div');
-    descripcionProducto.classList.add('Descripcion_Producto');
-    const p = document.createElement('p');
+    const descripcionProducto = document.createElement("div");
+    descripcionProducto.classList.add("Descripcion_Producto");
+    const p = document.createElement("p");
     p.textContent = descripcion;
     descripcionProducto.appendChild(p);
     tarjeta.appendChild(descripcionProducto);
 
-    document.getElementById('contenedorTarjetas').appendChild(tarjeta);
-}
+    document.getElementById("contenedorTarjetas").appendChild(tarjeta);
+    }
 
-crearTarjetaProducto("Café Expreso", "/Assets/Cafeteria/Cafe_Expreso.jpeg", "Café espresso puro, fuerte y aromático, para los que buscan un sabor intenso.");
-crearTarjetaProducto("Café Americano", "/Assets/Cafeteria/Cafe_Americano.jpg", "Café espresso diluido con agua caliente, suave y amargo.");
-crearTarjetaProducto("Café Cortado", "/Assets/Cafeteria/Cafe_Cortado.png", "Café espresso con un toque de leche caliente, suave y equilibrado.");
-crearTarjetaProducto("Café Capuchino", "/Assets/Cafeteria/Cafe_Capucchino.jpg", "Café espresso con leche vaporizada y espuma de leche, cremoso y suave.");
-crearTarjetaProducto("Café Moca", "/Assets/Cafeteria/Cafe_Moca.jpg", "Café espresso combinado con chocolate y leche vaporizada, para un toque dulce y delicioso.");
-crearTarjetaProducto("Flat White", "/Assets/Cafeteria/Cafe_Flat_White.jpg", "Café espresso con leche vaporizada y una capa suave de microespuma, cremoso pero no tan espeso como un cappuccino.");
-// crearTarjetaProducto("Macchiato", "/Assets/Cafeteria/Cafe_Macchiato.jpg", "Café espresso con un toque de leche espumada en la parte superior, fuerte y ligeramente dulce.");
+    crearTarjetaProducto(
+    "Cafeteria",
+    "Café Expreso",
+    "/Assets/Cafeteria/Cafe_Expreso.jpeg",
+    "Café espresso puro, fuerte y aromático, para los que buscan un sabor intenso."
+    );
+    crearTarjetaProducto(
+    "Cafeteria",
+    "Café Americano",
+    "/Assets/Cafeteria/Cafe_Americano.jpg",
+    "Café espresso diluido con agua caliente, suave y amargo."
+    );
+    crearTarjetaProducto(
+    "Cafeteria",
+    "Café Cortado",
+    "/Assets/Cafeteria/Cafe_Cortado.png",
+    "Café espresso con un toque de leche caliente, suave y equilibrado."
+    );
+    crearTarjetaProducto(
+    "Cafeteria",
+    "Café Capuchino",
+    "/Assets/Cafeteria/Cafe_Capucchino.jpg",
+    "Café espresso con leche vaporizada y espuma de leche, cremoso y suave."
+    );
+    crearTarjetaProducto(
+    "Cafeteria",
+    "Café Moca",
+    "/Assets/Cafeteria/Cafe_Moca.jpg",
+    "Café espresso combinado con chocolate y leche vaporizada, para un toque dulce y delicioso."
+    );
+    crearTarjetaProducto(
+    "Cafeteria",
+    "Flat White",
+    "/Assets/Cafeteria/Cafe_Flat_White.jpg",
+    "Café espresso con leche vaporizada y una capa suave de microespuma, cremoso pero no tan espeso como un cappuccino."
+    );
+    crearTarjetaProducto(
+    "Heladeria",
+    "Torta Helada",
+    "/Assets/Heladeria/Torta_Helada.jpg",
+    "Deliciosa combinación de bizcochuelo y helado, ideal para celebraciones."
+    );
+    crearTarjetaProducto(
+    "Heladeria",
+    "Cucurucho",
+    "/Assets/Heladeria/Cucurucho.jpg",
+    "Helado servido en un crujiente cucurucho de galleta."
+    );
+    crearTarjetaProducto(
+    "Heladeria",
+    "Vasito de Helado",
+    "/Assets/Heladeria/Vasito_de_Helado.jpg",
+    "Porción individual de helado en vaso, ideal para llevar."
+    );
+    crearTarjetaProducto(
+    "Heladeria",
+    "Helado de 1/4 Kg",
+    "/Assets/Heladeria/Cuarto_de_Helado.png",
+    "Cuarto de kilo de tu helado favorito, perfecto para compartir."
+    );
+    crearTarjetaProducto(
+    "Heladeria",
+    "Helado de 1/2 Kg",
+    "/Assets/Heladeria/Medio_Kilo.png",
+    "Medio kilo de puro placer helado con tus sabores favoritos."
+    );
+    crearTarjetaProducto(
+    "Heladeria",
+    "Helado de 1 Kg",
+    "/Assets/Heladeria/Kilo_de_Helado.png",
+    "Un kilo de helado cremoso para disfrutar en familia o con amigos."
+    );
 
 
+    function mostrarCategoria(categoria) {
+        const contenedor = document.getElementById('contenedorTarjetas');
+        const tarjetas = document.querySelectorAll('.Producto');
 
+        if (contenedor.classList.contains('mostrar') && contenedor.getAttribute('data-visible') === categoria) {
+            contenedor.classList.remove('mostrar');
+            setTimeout(() => { contenedor.style.display = 'none'; }, 300);
+            contenedor.setAttribute('data-visible', '');
+        } else {
+            contenedor.style.display = 'grid';
+            setTimeout(() => { contenedor.classList.add('mostrar'); }, 10);
+            contenedor.setAttribute('data-visible', categoria);
+
+            tarjetas.forEach(tarjeta => {
+                if (tarjeta.getAttribute('data-categoria') === categoria) {
+                    tarjeta.style.display = 'grid';
+                } else {
+                    tarjeta.style.display = 'none';
+                }
+            });
+        }
+    }
+
+    function validarEdades() {
+        let edadDesde = document.getElementById("edad_desde").value;
+        let edadHasta = document.getElementById("edad_hasta").value;
+    
+        if (edadDesde && edadHasta) {
+            if (parseInt(edadHasta) < parseInt(edadDesde)) {
+                alert("La edad hasta no puede ser menor que la edad desde.");
+                document.getElementById("edad_hasta").value = "";
+            }
+        }
+    }
