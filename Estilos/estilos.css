@@ -51,6 +51,7 @@
 body {
     background-color: var(--color_Nro3);
     color: var(--color_Nro5);
+    min-width: 500px;
 }
 
 .Contenedor_Header {
@@ -59,6 +60,7 @@ body {
     align-items: center;
     gap: 20px;
     padding: 1em;
+    min-width: 500px;
 }
 
 .Logo_Cafelino {
@@ -106,6 +108,7 @@ nav {
     padding-bottom: 15px;
     gap: 30px;
     background-color: var(--color_Nro4);
+    min-width: 500px;
 }
 
 nav button {
@@ -177,6 +180,7 @@ main {
     height: auto;
     margin-top: 50px;
     margin-bottom: 50px;
+    min-width: 500px;
 }
 
 .Contenedor_Menu {
@@ -336,7 +340,8 @@ footer {
 }
 
 .Contenedor_Forms {
-    width: auto;
+    display: flex;
+    min-width: 500px;
     margin: auto;
     background-color: white;
     padding: 25px;
@@ -345,34 +350,142 @@ footer {
 }
 
 fieldset {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
     border: none;
 }
 
 legend {
     font-size: 1.5em;
-    font-weight: bold;
     text-align: center;
+    font-family: "Playwrite AR", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
-input, button {
+label {
+    font-family: "Red Hat Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.sin_negrita {
+    font-weight: normal;
+}
+
+input {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-family: "Red Hat Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.descripciones {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    gap: 5px;
+}
+
+.descripciones span {
+    display: flex;
+    align-self: end;
+    gap: 10px;
+    font-family: "Red Hat Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.selecciones {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    gap: 5px;
+}
+
+.selecciones div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+}
+
+.selecciones div input {
+    margin: 0px;
+    align-self: center;
+}
+
+textarea {
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+    resize: vertical;
+    font-family: "Red Hat Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.boton_formulario {
     margin-bottom: 10px;
     padding: 8px;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-button {
     background-color: var(--color_Nro4);
     color: var(--color_Nro2);
     font-weight: bold;
     cursor: pointer;
+    font-family: "Red Hat Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
 }
 
-button:hover {
+.boton_formulario:hover {
     background-color: var(--color_Nro5);
 }
 
-h4 {
-    margin-bottom: 5px;
+.oculto {
+    display: none;
+}
+
+.boton_personalizado {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--color_Nro4);
+    color: var(--color_Nro2);
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Red Hat Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 14px;
+}
+
+.boton_personalizado:hover {
+    background-color: var(--color_Nro5);
 }

@@ -125,14 +125,3 @@
         }
     }
 
-    function validarEdades() {
-        let edadDesde = document.getElementById("edad_desde").value;
-        let edadHasta = document.getElementById("edad_hasta").value;
-    
-        if (edadDesde && edadHasta) {
-            if (parseInt(edadHasta) < parseInt(edadDesde)) {
-                alert("La edad hasta no puede ser menor que la edad desde.");
-                document.getElementById("edad_hasta").value = "";
-            }
-        }
-    }
