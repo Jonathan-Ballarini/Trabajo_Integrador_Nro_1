@@ -409,7 +409,7 @@ input {
     font-size: 14px;
 }
 
-.selecciones {
+.selecciones_alta {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -418,7 +418,7 @@ input {
     gap: 5px;
 }
 
-.selecciones div {
+.selecciones_alta div {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -426,7 +426,7 @@ input {
     gap: 10px;
 }
 
-.selecciones div input {
+.selecciones_alta div input {
     margin: 0px;
     align-self: center;
 }
@@ -457,6 +457,7 @@ textarea {
     font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
+    transition: 0.5s;
 }
 
 .boton_formulario:hover {
@@ -484,8 +485,73 @@ textarea {
     text-transform: uppercase;
     text-align: center;
     font-size: 14px;
+    transition: 0.5s;
 }
 
 .boton_personalizado:hover {
     background-color: var(--color_Nro5);
+}
+
+.selecciones_contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    gap: 5px;
+}
+
+.selecciones_contacto div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+}
+
+.selecciones_contacto div input {
+    margin: 0px;
+    align-self: center;
+    width: auto;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+.rating input {
+    display: none;
+}
+.rating label {
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color_Nro4);
+    transition: color 0.2s;
+}
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    color: gold;
+}
+
+.plataformas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.plataformas div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 40%;
+}
+
+.plataformas div label {
+    font-family: "Red Hat Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
