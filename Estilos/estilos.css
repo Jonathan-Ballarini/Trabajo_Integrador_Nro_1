@@ -55,31 +55,45 @@ body {
 }
 
 .Contenedor_Header {
+    position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 20px;
     padding: 1em;
     min-width: 500px;
-}
-
-.Logo_Cafelino {
-    width: 5%;
-    min-width: 100px;
-    height: auto;
+    margin: 10px;
 }
 
 .Texto_Header {
-    display: flex;
-    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 h1 {
     font-family: "Corinthia", serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 6em;
+    font-size: 5em;
     text-align: center;
+}
+
+.contenedor_iconos {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 20%;
+    margin-left: auto;
+}
+
+.contenedor_iconos img {
+    width: 20%;
+    min-width: 40px;
+    height: auto;
+    cursor: pointer;
 }
 
 h2 {
@@ -97,17 +111,24 @@ h3 {
     text-align: center;
 }
 
+.contenedor_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    min-width: 500px;
+}
+
 nav {
     display: grid;
     grid-template-columns: repeat(4, auto);
     justify-content: center;
-    align-items: center;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    align-items: center;    
     padding-top: 15px;
     padding-bottom: 15px;
-    gap: 30px;
-    background-color: var(--color_Nro4);
+    gap: 15px;
     min-width: 500px;
 }
 
@@ -115,14 +136,14 @@ nav button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--color_Nro3);
-    height: 50px;
-    width: 200px;
+    background-color: transparent;
+    height: 25px;
+    width: 150px;
+    border: none;
+    border-radius: 15px;
     flex-basis: 50%;
     color: var(--color_Nro5);
-    border: 0.5px solid black;
-    padding: 1em;
-    border-radius: 10px;
+    padding: 0.5em;
     cursor: pointer;
     font-family: "Red Hat Display", serif;
     font-optical-sizing: auto;
@@ -135,8 +156,8 @@ nav button {
 }
 
 nav button:hover {
-    background-color: var(--color_Nro1);
-    color: var(--color_Nro5);
+    background-color: var(--color_Nro4);
+    border-radius: 15px;
 }
 
 nav button a {
@@ -168,6 +189,38 @@ main {
     gap: 20px;
     padding: 0em;
     color: var(--color_Nro5)
+}
+
+.contenedor_banner {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.banner video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+}
+
+#videoB {
+    opacity: 0;
+}
+
+.contenedor_banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
 }
 
 

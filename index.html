@@ -10,52 +10,68 @@
 
 <body>
     <header>
-        <div class="Contenedor_Header">
-
-            <img class="Logo_Cafelino" src="/Assets/Logo_Cafelino/Gato.png" alt="Logo de Cafelino">
-            <div class="Texto_Header">
-                <h1>Cafelino</h1>
-                <h2>Tu pausa favorita del día</h2>
+        <div>
+            <div class="Contenedor_Header">
+                <div class="Texto_Header">
+                    <h1>Cafelino</h1>
+                </div>
+                <div class="contenedor_iconos">
+                    <img src="/Assets/Header/Usuario_1.png" alt="">
+                    <img src="/Assets/Header/Carrito.png" alt="">
+                </div>
+            </div>
+            <div class="contenedor_nav">
+                <nav>
+                    <button onclick="location.href='/index.html'"> Inicio </button>
+                    <button onclick="location.href='/Pages/Alta.html'""> Alta </button>
+                    <button onclick=" location.href='/Pages/Contacto.html'"> Contacto </button>
+                    <button onclick=" location.href='/Pages/Nosotros.html'"> Nosotros </button>
+                </nav>
+                <div>
+                    <input type=" text" placeholder="Buscar">
             </div>
         </div>
-        <div>
-            <nav>
-                <button onclick="location.href='/index.html'"> Inicio </button>
-                <button onclick="location.href='/Pages/Alta.html'""> Alta </button>
-                <button onclick=" location.href='/Pages/Contacto.html'"> Contacto </button>
-                <button onclick=" location.href='/Pages/Nosotros.html'"> Nosotros </button>
-            </nav>
-        </div>
 
+        </div>
     </header>
     <main>
-        <div class="Contenedor_Principal">
-                    <div class="Contenedor_Menu">
-                        <section class="Cafeteria" onclick="mostrarCategoria('Cafeteria')">
-                            <img src="/Assets/Cafeteria/Logo_Cafe.png" alt="Cafe_PNG" class="Imagen_Cafe">
-                            <div>
-                                <h3>Cafeteria</h3>
-                            </div>
-                        </section>
-                        <div class="Separador"></div>
-                        <section class="Heladeria" onclick="mostrarCategoria('Heladeria')">
-                            <img src="/Assets/Heladeria/Logo_Helado.png" alt="Helado_PNG" class="Imagen_Helado">
-                            <div>
-                                <h3>Heladería</h3>
-                            </div>
-                        </section>
+        <div>
+            <div class="contenedor_banner">
+                <div class="banner">
+                    <video id="videoA" autoplay muted></video>
+                    <video id="videoB" autoplay muted></video>
+                </div>
+            </div>
+            
 
-                    </div>
+            <div class=" Contenedor_Principal">
+                <div class="Contenedor_Menu">
+                    <section class="Cafeteria" onclick="mostrarCategoria('Cafeteria')">
+                        <img src="/Assets/Cafeteria/Logo_Cafe.png" alt="Cafe_PNG" class="Imagen_Cafe">
+                        <div>
+                            <h3>Cafeteria</h3>
+                        </div>
+                    </section>
+                    <div class="Separador"></div>
+                    <section class="Heladeria" onclick="mostrarCategoria('Heladeria')">
+                        <img src="/Assets/Heladeria/Logo_Helado.png" alt="Helado_PNG" class="Imagen_Helado">
+                        <div>
+                            <h3>Heladería</h3>
+                        </div>
+                    </section>
 
-                    <div class="Tarjetas" id="contenedorTarjetas">
+                </div>
 
-                    </div>
+                <div class="Tarjetas" id="contenedorTarjetas">
+
+                </div>
+            </div>
         </div>
-        </main>
-        <footer>
-            <br><br>
-            <h1>Realizado por JB</h1>
-        </footer>
+    </main>
+    <footer>
+        <br><br>
+        <h1>Realizado por JB</h1>
+    </footer>
 </body>
 
 

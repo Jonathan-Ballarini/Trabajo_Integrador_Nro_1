@@ -125,3 +125,40 @@
         }
     }
 
+
+const videoSources = [
+    "/Assets/Banner/Cafeteria_Borra.mp4",
+    "/Assets/Banner/Helado_Salsa.mp4",
+    "/Assets/Banner/Cafeteria_Interiores.mp4",
+    "/Assets/Banner/Cafe_Servir.mp4",
+    "/Assets/Banner/Helado_Cucharada.mp4"
+];
+
+let currentIndex = 0;
+let isVideoAPlaying = true;
+
+const videoA = document.getElementById("videoA");
+const videoB = document.getElementById("videoB");
+
+videoA.src = videoSources[currentIndex];
+videoA.currentTime = 0;
+videoA.play();
+
+function playNextVideo() {
+    currentIndex = (currentIndex + 1) % videoSources.length;
+    const nextVideo = isVideoAPlaying ? videoB : videoA;
+    const currentVideo = isVideoAPlaying ? videoA : videoB;
+
+    nextVideo.src = videoSources[currentIndex];
+    nextVideo.currentTime = 0;
+    nextVideo.play();
+
+    nextVideo.style.opacity = "1";
+    currentVideo.style.opacity = "0";
+
+    isVideoAPlaying = !isVideoAPlaying;
+}
+
+setInterval(playNextVideo, 10000);
+
+
