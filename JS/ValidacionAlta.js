@@ -101,3 +101,17 @@ document.querySelector("form").addEventListener("submit", function (event) {
         event.preventDefault();
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("../Componentes/Header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("componente_header").innerHTML = data;
+        });
+
+    fetch("../Componentes/Footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("componente_footer").innerHTML = data;
+        });
+});

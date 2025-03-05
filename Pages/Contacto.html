@@ -10,157 +10,89 @@
 
 <body>
     <header>
-        <div>
-            <div class="Contenedor_Header">
-                <div>
-                    <img class="logo_cafelino" src="../Assets/Logo_Cafelino/Logo_Cafelino_2.jpg" alt="Logo_Cafelino">
-                </div>
-                <div class="Texto_Header">
-                    <h1>Cafelino</h1>
-                </div>
-                <div class="contenedor_iconos">
-                    <img src="../Assets/Header/Usuario_1.png" alt="Login" title="Login">
-                    <img src="../Assets/Header/Carrito.png" alt="carrito" title="Carrito">
-                </div>
-            </div>
-            <div class="contenedor_nav">
-                <nav>
-                    <button onclick="location.href='../index.html'"> Inicio </button>
-                    <button onclick="location.href='../Pages/Alta.html'""> Alta </button>
-                    <button onclick="location.href='../Pages/Contacto.html'"> Contacto </button>
-                    <div class="menu_desplegable">
-                        <button class="desplegable_abajo" onclick="location.href='../Pages/Nosotros.html'">Nosotros</button>
-                        <ul class="menu_desplegable_contenido">
-                            <li><a href="../Pages/Nosotros.html#historia">Historia</a></li>
-                            <li><a href="../Pages/Nosotros.html#elaboracion">Elaboración de productos</a></li>
-                            <li><a href="../Pages/Nosotros.html#petfriendly">Pet Friendly</a></li>
-                            <li><a href="../Pages/Nosotros.html#locales">Nuestros locales</a></li>
-                            <li><a href="../Pages/Nosotros.html#toque-casero">Un toque casero</a></li>
-                        </ul>
-                    </div>
-                </nav>
-                <div class="contenedor_busqueda">
-                    <input class="buscador" type=" text" placeholder="Buscar">
-                </div>
-            </div>
-        </div>
+        <div id="componente_header"></div>
     </header>
-    <main>
+        <main>
 
         <div class=" Contenedor_Principal_Alta">
 
-                    <form class="Contenedor_Forms" id="ratingForm" action="">
-                        <fieldset>
-                            <legend>Contanos tu Experiencia</legend>
+            <form class="Contenedor_Forms" id="ratingForm" action="">
+                <fieldset>
+                    <legend>Contanos tu Experiencia</legend>
 
-                            <label for="nombre">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" pattern="^[A-Za-z\s]+$" required
-                                placeholder="Ingrese su nombre (solo texto)">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" pattern="^[A-Za-z\s]+$" required
+                        placeholder="Ingrese su nombre (solo texto)">
 
-                            <label for="edad">Edad</label>
-                            <input type="number" name="edad" id="edad" required min="18" max="100" step="1"
-                                placeholder="Ingrese su edad">
+                    <label for="edad">Edad</label>
+                    <input type="number" name="edad" id="edad" required min="18" max="100" step="1"
+                        placeholder="Ingrese su edad">
 
-                            <label for="correo">E-mail</label>
-                            <input type="email" name="correo" id="correo"
-                                pattern="^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\.[a-zA-Z]{2,}$" required
-                                placeholder="Ingrese su Correo Electrónico">
+                    <label for="correo">E-mail</label>
+                    <input type="email" name="correo" id="correo"
+                        pattern="^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\.[a-zA-Z]{2,}$" required
+                        placeholder="Ingrese su Correo Electrónico">
 
+                    <div>
+                        <div class="descripciones">
+                            <label for="comentarios">Dejanos tus comentarios</label>
+                            <textarea name="comentarios" id="comentarios"
+                                placeholder="Contanos cómo fue tu experiencia con nosotros" required maxlength="600"
+                                onblur="validarTexto(this)" oninput="actualizarContadorComentarios()"></textarea>
+                            <span id="contadorComentarios">0/600</span>
+                        </div>
+                    </div>
+                    <div class="selecciones_contacto">
+                        <label>¿Cómo nos conociste?</label>
+                        <div class="plataformas">
                             <div>
-                                <div class="descripciones">
-                                    <label for="comentarios">Dejanos tus comentarios</label>
-                                    <textarea name="comentarios" id="comentarios"
-                                        placeholder="Contanos cómo fue tu experiencia con nosotros" required
-                                        maxlength="600" onblur="validarTexto(this)"
-                                        oninput="actualizarContadorComentarios()"></textarea>
-                                    <span id="contadorComentarios">0/600</span>
-                                </div>
+                                <input type="radio" name="Opciones" id="Instagram" required><label
+                                    for="opcion1">Instagram</label>
                             </div>
-                            <div class="selecciones_contacto">
-                                <label>¿Cómo nos conociste?</label>
-                                <div class="plataformas">
-                                    <div>
-                                        <input type="radio" name="Opciones" id="Instagram" required><label for="opcion1">Instagram</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" name="Opciones" id="Facebook" required><label for="opcion2">Facebook</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" name="Opciones" id="Página Web" required><label for="opcion3">Página Web</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" name="Opciones" id="Otro" required><label for="opcion4">Otro</label>
-                                    </div>
-                                </div>
-                            </div>
-                            
                             <div>
-                                <label>Calificá tu experiencia</label>
-                                <div class="rating">
-                                    <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
-                                    <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
-                                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
-                                    <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
-                                    <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
-                                </div>
+                                <input type="radio" name="Opciones" id="Facebook" required><label
+                                    for="opcion2">Facebook</label>
                             </div>
-                            <div class="selecciones_contacto">
-                                <div>
-                                    <input type="checkbox" name="Newsletter" id="Newsletter">
-                                    <label class="sin_negrita" for="Newsletter">
-                                        Quiero ser parte del newsletter semanal.
-                                    </label>
-                                </div>
+                            <div>
+                                <input type="radio" name="Opciones" id="Página Web" required><label for="opcion3">Página
+                                    Web</label>
                             </div>
-                            <label for="archivo" class="boton_personalizado">Subir Foto</label>
-                            <input type="file" name="archivo" id="archivo" multiple class="oculto">
+                            <div>
+                                <input type="radio" name="Opciones" id="Otro" required><label for="opcion4">Otro</label>
+                            </div>
+                        </div>
+                    </div>
 
-                            <button class="boton_formulario" type="submit">Cargar Producto</button>
-                            <button class="boton_formulario" type="reset">Eliminar Contenido</button>
-                        </fieldset>
-                    </form>
+                    <div>
+                        <label>Calificá tu experiencia</label>
+                        <div class="rating">
+                            <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                            <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                            <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                            <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                            <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                        </div>
+                    </div>
+                    <div class="selecciones_contacto">
+                        <div>
+                            <input type="checkbox" name="Newsletter" id="Newsletter">
+                            <label class="sin_negrita" for="Newsletter">
+                                Quiero ser parte del newsletter semanal.
+                            </label>
+                        </div>
+                    </div>
+                    <label for="archivo" class="boton_personalizado">Subir Foto</label>
+                    <input type="file" name="archivo" id="archivo" multiple class="oculto">
 
+                    <button class="boton_formulario" type="submit">Cargar Producto</button>
+                    <button class="boton_formulario" type="reset">Eliminar Contenido</button>
+                </fieldset>
+            </form>
         </div>
-
-        </main>
-        <footer>
-            <div class="footer_contenido">
-                <div class="contacto_info">
-                    <a href="https://maps.app.goo.gl/Q6zsLEoYSJ4Bu6R38" target="_blank">
-                        <p>Anatole France 2152, Castelar</p>
-                        <p>+54 9 11 4472 5182</p>
-                        <p>info@cafelino.com</p>
-                    </a>
-                </div>
-                <div class="redes">
-                    <a href="https://facebook.com" target="_blank">
-                        <img src="../Assets/Logos_Apps/Facebook_Logo.png" alt="Facebook">
-                    </a>
-                    <a href="https://instagram.com" target="_blank">
-                        <img src="../Assets/Logos_Apps/Instagram_Logo.png" alt="">
-                    </a>
-                    <a href="https://youtube.com" target="_blank">
-                        <img src="../Assets/Logos_Apps/YouTube_Logo.png" alt="">
-                    </a>
-                </div>
-                <div class="mapa_sitio">
-                    <div class="contenedor_mapa">
-                        <a href="../index.html"> Inicio </a>
-                        <a href="../Pages/Alta.html"> Alta </a>
-                        <a href="../Pages/Contacto.html"> Contacto </a>
-                        <a href="../Pages/Nosotros.html">Nosotros</button>
-                    </div>
-                    <div class="contenedor_mapa">                    
-                        <a href="../Pages/Nosotros.html#historia">Historia</a>
-                        <a href="../Pages/Nosotros.html#elaboracion">Elaboración de productos</a>
-                        <a href="../Pages/Nosotros.html#petfriendly">Pet Friendly</a>
-                        <a href="../Pages/Nosotros.html#locales">Nuestros locales</a>
-                        <a href="../Pages/Nosotros.html#toque-casero">Un toque casero</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
+    </main>
+    <footer>
+        <div id="componente_footer"></div>
+    </footer>
 </body>
 <script src="../JS/ValidacionContacto.js"></script>
 

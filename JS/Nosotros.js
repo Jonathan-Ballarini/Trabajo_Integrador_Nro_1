@@ -53,3 +53,17 @@ window.addEventListener('scroll', handleScrollAnimations);
 window.addEventListener('load', handleScrollAnimations);
 
 window.addEventListener('resize', handleScrollAnimations);
+
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("../Componentes/Header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("componente_header").innerHTML = data;
+        });
+
+    fetch("../Componentes/Footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("componente_footer").innerHTML = data;
+        });
+});
