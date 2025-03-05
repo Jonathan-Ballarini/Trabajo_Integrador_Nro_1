@@ -1,4 +1,4 @@
-    function crearTarjetaProducto(categoria, titulo, imagenUrl, descripcion) {
+function crearTarjetaProducto(categoria, titulo, imagenUrl, descripcion, precio, imagenBoton) {
     const tarjeta = document.createElement("div");
     tarjeta.classList.add("Producto", categoria);
     tarjeta.setAttribute("data-categoria", categoria);
@@ -25,83 +25,125 @@
     descripcionProducto.appendChild(p);
     tarjeta.appendChild(descripcionProducto);
 
+    const footerTarjeta = document.createElement('div');
+    footerTarjeta.classList.add('footer_tarjeta');
+
+    const precioProducto = document.createElement('div');
+    precioProducto.classList.add('Precio_Producto');
+    const spanPrecio = document.createElement('span');
+    spanPrecio.textContent = `$${precio}.-`;
+    precioProducto.appendChild(spanPrecio);
+
+    const botonCarrito = document.createElement('div');
+    botonCarrito.classList.add('Boton_Agregar_Carrito');
+    botonCarrito.style.flexGrow = "1";
+
+    const boton = document.createElement('button');
+    const imgBoton = document.createElement('img');
+    imgBoton.src = '../Assets/Header/Carrito.png';
+    imgBoton.alt = 'Agregar al carrito';
+    imgBoton.classList.add('Boton_Imagen');
+
+    boton.appendChild(imgBoton);
+    boton.onclick = function() {
+        alert(`${titulo} agregado al carrito.`);
+    };
+    
+    botonCarrito.appendChild(boton);
+
+    footerTarjeta.appendChild(precioProducto);
+    footerTarjeta.appendChild(botonCarrito);
+
+    tarjeta.appendChild(footerTarjeta);
+
     document.getElementById("contenedorTarjetas").appendChild(tarjeta);
-    }
+}
 
     crearTarjetaProducto(
-    "Cafeteria",
-    "Café Expreso",
-    "/Assets/Cafeteria/Cafe_Expreso.jpeg",
-    "Café espresso puro, fuerte y aromático, para los que buscan un sabor intenso."
+        "Cafeteria",
+        "Café Expreso",
+        "/Assets/Cafeteria/Cafe_Expreso.jpeg",
+        "Café espresso puro, fuerte y aromático, para los que buscan un sabor intenso.",
+        "2.400"
     );
     crearTarjetaProducto(
-    "Cafeteria",
-    "Café Americano",
-    "/Assets/Cafeteria/Cafe_Americano.jpg",
-    "Café espresso diluido con agua caliente, suave y amargo."
+        "Cafeteria",
+        "Café Americano",
+        "/Assets/Cafeteria/Cafe_Americano.jpg",
+        "Café espresso diluido con agua caliente, suave y amargo.",
+        "3.000"
     );
     crearTarjetaProducto(
-    "Cafeteria",
-    "Café Cortado",
-    "/Assets/Cafeteria/Cafe_Cortado.png",
-    "Café espresso con un toque de leche caliente, suave y equilibrado."
+        "Cafeteria",
+        "Café Cortado",
+        "/Assets/Cafeteria/Cafe_Cortado.png",
+        "Café espresso con un toque de leche caliente, suave y equilibrado.",
+        "3.360"
     );
     crearTarjetaProducto(
-    "Cafeteria",
-    "Café Capuchino",
-    "/Assets/Cafeteria/Cafe_Capucchino.jpg",
-    "Café espresso con leche vaporizada y espuma de leche, cremoso y suave."
+        "Cafeteria",
+        "Café Capuchino",
+        "/Assets/Cafeteria/Cafe_Capucchino.jpg",
+        "Café espresso con leche vaporizada, espuma, canela y cacao.",
+        "4.200"
     );
     crearTarjetaProducto(
-    "Cafeteria",
-    "Café Moca",
-    "/Assets/Cafeteria/Cafe_Moca.jpg",
-    "Café espresso combinado con chocolate y leche vaporizada, para un toque dulce y delicioso."
+        "Cafeteria",
+        "Café Moca",
+        "/Assets/Cafeteria/Cafe_Moca.jpg",
+        "Café espresso combinado con chocolate y leche vaporizada, para un toque dulce y delicioso.",
+        "4.800"
     );
     crearTarjetaProducto(
-    "Cafeteria",
-    "Flat White",
-    "/Assets/Cafeteria/Cafe_Flat_White.jpg",
-    "Café espresso con leche vaporizada y una capa suave de microespuma, cremoso pero no tan espeso como un cappuccino."
+        "Cafeteria",
+        "Flat White",
+        "/Assets/Cafeteria/Cafe_Flat_White.jpg",
+        "Café espresso con leche vaporizada y una capa suave de microespuma, bien cremoso.",
+        "4.560"
     );
     crearTarjetaProducto(
-    "Heladeria",
-    "Torta Helada",
-    "/Assets/Heladeria/Torta_Helada.jpg",
-    "Deliciosa combinación de bizcochuelo y helado, ideal para celebraciones."
+        "Heladeria",
+        "Torta Helada",
+        "/Assets/Heladeria/Torta_Helada.jpg",
+        "Deliciosa combinación de bizcochuelo y helado, ideal para celebraciones.",
+        "6.600"
     );
     crearTarjetaProducto(
-    "Heladeria",
-    "Cucurucho",
-    "/Assets/Heladeria/Cucurucho.jpg",
-    "Helado servido en un crujiente cucurucho de galleta."
+        "Heladeria",
+        "Cucurucho",
+        "/Assets/Heladeria/Cucurucho.jpg",
+        "Helado servido en un crujiente cucurucho de galleta.",
+        "3.600"
     );
     crearTarjetaProducto(
-    "Heladeria",
-    "Vasito de Helado",
-    "/Assets/Heladeria/Vasito_de_Helado.jpg",
-    "Porción individual de helado en vaso, ideal para llevar."
+        "Heladeria",
+        "Vasito de Helado",
+        "/Assets/Heladeria/Vasito_de_Helado.jpg",
+        "Porción individual de helado en vaso, ideal para llevar.",
+        "4.200"
     );
     crearTarjetaProducto(
-    "Heladeria",
-    "Helado de 1/4 Kg",
-    "/Assets/Heladeria/Cuarto_de_Helado.png",
-    "Cuarto de kilo de tu helado favorito, perfecto para compartir."
+        "Heladeria",
+        "Helado de 1/4 Kg",
+        "/Assets/Heladeria/Cuarto_de_Helado.png",
+        "Cuarto de kilo de tu helado favorito, perfecto para compartir.",
+        "7.800"
     );
     crearTarjetaProducto(
-    "Heladeria",
-    "Helado de 1/2 Kg",
-    "/Assets/Heladeria/Medio_Kilo.png",
-    "Medio kilo de puro placer helado con tus sabores favoritos."
+        "Heladeria",
+        "Helado de 1/2 Kg",
+        "/Assets/Heladeria/Medio_Kilo.png",
+        "Medio kilo de puro placer helado con tus sabores favoritos.",
+        "13.200"
     );
     crearTarjetaProducto(
-    "Heladeria",
-    "Helado de 1 Kg",
-    "/Assets/Heladeria/Kilo_de_Helado.png",
-    "Un kilo de helado cremoso para disfrutar en familia o con amigos."
+        "Heladeria",
+        "Helado de 1 Kg",
+        "/Assets/Heladeria/Kilo_de_Helado.png",
+        "Un kilo de helado cremoso para disfrutar en familia o con amigos.",
+        "24.000"
     );
-
-
+    
     function mostrarCategoria(categoria) {
         const contenedor = document.getElementById('contenedorTarjetas');
         const tarjetas = document.querySelectorAll('.Producto');
