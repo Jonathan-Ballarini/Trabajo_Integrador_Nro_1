@@ -36,9 +36,16 @@
 /* Fonts */
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    margin: 0%;
 }
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 
 :root {
     --color_Nro1: rgb(78, 155, 154);
@@ -62,7 +69,13 @@ body {
     gap: 20px;
     padding: 1em;
     min-width: 500px;
-    margin: 10px;
+    background-color: #FCF2E9;
+}
+
+.logo_cafelino {
+    width: 20%;
+    min-width: 25px;
+    height: auto;
 }
 
 .Texto_Header {
@@ -84,13 +97,13 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 15px;
     width: 20%;
     margin-left: auto;
 }
 
 .contenedor_iconos img {
-    width: 20%;
+    width: 15%;
     min-width: 40px;
     height: auto;
     cursor: pointer;
@@ -116,10 +129,24 @@ h3 {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10px;
+    padding-right: 10px;
     min-width: 500px;
+    background-color: var(--color_Nro4);
+    border-top: 1.5px solid var(--color_Nro5);
+    border-bottom: 1.5px solid var(--color_Nro5);
 }
+
+@media (max-width: 720px) {
+    .contenedor_nav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 20px 10px;
+    }
+}
+
 
 nav {
     display: grid;
@@ -156,12 +183,59 @@ nav button {
 }
 
 nav button:hover {
-    background-color: var(--color_Nro4);
+    background-color: var(--color_Nro5);
+    color: var(--color_Nro2);
     border-radius: 15px;
 }
 
-nav button a {
+.menu_desplegable {
+    position: relative;
+    display: inline-block;
+}
+
+.menu_desplegable_contenido {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color_Nro4);
+    border-radius: 10px;
+    min-width: 150px;
+    border: 1px solid var(--color_Nro5);
+    z-index: 100;
+    padding: 5px;
+}
+
+.menu_desplegable_contenido li {
+    list-style: none;
+}
+
+.menu_desplegable_contenido a {
+    display: block;
+    padding: 10px;
+    color: var(--color_Nro5);
     text-decoration: none;
+    font-family: "Red Hat Display", serif;
+    font-weight: 500;
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.menu_desplegable_contenido a:hover {
+    background-color: var(--color_Nro5);
+    color: var(--color_Nro2);
+    border-radius: 10px;
+}
+
+.menu_desplegable:hover .menu_desplegable_contenido {
+    display: block;
+}
+
+.menu_desplegable:hover .desplegable_abajo {
+    background-color: var(--color_Nro5);
+    color: var(--color_Nro2);
 }
 
 @media (max-width: 900px) {
@@ -175,10 +249,28 @@ nav button a {
         grid-template-columns: repeat(1, auto);
         place-items: center;
     }
+}
 
-    nav button {
-        width: 200px;
-    }
+.contenedor_busqueda {
+    width: 15%;
+    min-width: 150px;
+}
+
+.buscador {
+    margin: 0px;
+    border: 1px solid var(--color_Nro5);
+    border-radius: 15;
+}
+
+.buscador::placeholder {
+    font-family: "Red Hat Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.buscador:focus {
+    outline: none;
 }
 
 main {
@@ -206,11 +298,27 @@ main {
     height: 100%;
     object-fit: cover;
     transition: opacity 1s ease-in-out;
+    border-bottom: 1.5px solid var(--color_Nro5);
 }
 
 #videoB {
     opacity: 0;
 }
+
+@media (max-width: 500px) {
+    .contenedor_banner {
+        width: 500px; /* Mantiene un mínimo de 500px de ancho */
+        height: 100vh;
+        margin: 0 auto; /* Centra el contenedor */
+    }
+
+    .banner video {
+        width: 500px; /* Se mantiene alineado con el contenedor */
+        height: 100vh;
+        object-fit: cover;
+    }
+}
+
 
 .contenedor_banner::after {
     content: "";
@@ -223,6 +331,15 @@ main {
     pointer-events: none;
 }
 
+.texto_banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+}
 
 .Contenedor_Principal {
     display: flex;
@@ -244,6 +361,9 @@ main {
     width: 100%;
     height: 200px;
     cursor: pointer;
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .Cafeteria {
@@ -268,9 +388,9 @@ main {
 }
 
 .Separador {
-    width: 2px;
+    width: 4px;
     height: 100%;
-    background-color: black;
+    background-color: var(--color_Nro5);
 }
 
 .Heladeria {
@@ -373,12 +493,79 @@ p {
 }
 
 footer {
+    background-color: var(--color_Nro4);
+    color: var(--color_Nro5);
+    border-top: 1px solid var(--color_Nro5);
+    border-bottom: 1px solid var(--color_Nro5);
+    padding: 20px 0px;
+    text-align: center;
+    width: 100%;
+}
+
+footer .footer_contenido {
     display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer .footer_contenido div {
+    flex: 1;
+    min-width: 200px;
+}
+
+.contacto_info p {
+    margin-bottom: 10px;
+}
+
+.redes {
+    gap: 50px;
+}
+
+footer .redes a {
+    margin: 0px 10px;
+}
+
+footer a img {
+    width: 20%;
+    max-width: 70px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+a:active {
+    color: inherit;
+}
+
+.mapa_sitio {
+    display: flex;
+    flex-direction: row;
+    font-family: "Poiret One", serif;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    background-color: var(--color_Nro4);
+    margin-right: 50px;
+}
+
+.contenedor_mapa {
+    display: flex;
+    flex-direction: column;
+    max-width: 50px;
+    gap: 2px;
 }
 
 .Contenedor_Principal_Alta {
